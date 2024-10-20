@@ -26,7 +26,6 @@ This uses the offical Jellyfin container. This official container should help mo
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1729405106</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
