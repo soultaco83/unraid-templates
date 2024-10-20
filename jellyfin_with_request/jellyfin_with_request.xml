@@ -19,7 +19,9 @@ Jellyfin(https://github.com/jellyfin/jellyfin) is a Free Software Media System t
 &#xD;
 &#xD;
 This uses the offical Jellyfin container. This official container should help more people with hardware transcoding since this is a Debian base image instead of ubuntu</Overview>
-  <Category>MediaApp:Video</Category>
+  <Beta>False</Beta>
+  <Category>MediaApp:Video MediaServer:Video</Category>
+  <Date>2024-10-20</Date>
   <WebUI>http://[IP]:[PORT:8096]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/soultaco83/jellyfin-web-requeststab/refs/heads/master/src/favicon.png</Icon>
