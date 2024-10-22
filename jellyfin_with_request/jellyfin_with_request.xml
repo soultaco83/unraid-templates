@@ -10,7 +10,7 @@
   <Support>https://github.com/soultaco83/jellyfin-web-requeststab</Support>
   <Project>https://github.com/jellyfin/jellyfin</Project>
   <Overview>Jellyfin server and webui built off the latest commits. It includes a new tab called Requests&#xD;
-Because of the nature of Jellyfin unstable. Be sure to backup the jellyfin database before updating&#xD;
+Because of the nature of Jellyfin unstable. Be sure to backup the jellyfin database before updating, so you have something to rollback to&#xD;
 Requires install of RequestsAddon plugin for tab to function&#xD;
 https://github.com/soultaco83/Jellyfin_requests_plugin&#xD;
 &#xD;
