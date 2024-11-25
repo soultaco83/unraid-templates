@@ -1,0 +1,59 @@
+<Container version="2">
+  <Name>nhentai_archivist</Name>
+  <Repository>ghcr.io/9-fs/nhentai_archivist:latest</Repository>
+  <Registry>https://github.com/9-FS/nhentai_archivist/pkgs/container/nhentai_archivist</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/9-FS/nhentai_archivist/issues</Support>
+  <Project>https://github.com/9-FS/nhentai_archivist</Project>
+  <Overview>Unraid template for 9-FS/nhentai_archivist&#xD;
+Advanced options for .env: https://github.com/9-FS/nhentai_archivist/blob/main/readme.md#further-settings&#xD;
+# nhentai_archivist&#xD;
+&amp;gt; [!WARNING]&#xD;
+&amp;gt; I advise against running multiple instances of nHentai Archivist at the same time.&#xD;
+## Installation&#xD;
+&#xD;
+1. Execute the program once to create a default `./config/.env`.&#xD;
+    This means that in the directory of the executable, there should now be a directory called "config" containing a file called ".env". You might need to enable seeing hidden files in the file explorer.&#xD;
+&#xD;
+2. I recommend setting the `CSRFTOKEN` cookie and `USER_AGENT`. If you start having problems with nHentai's bot protection (error 403), setting these is mandatory. If a `CF_CLEARANCE` cookie is available, it should be set as well.&#xD;
+    - Mozilla Firefox&#xD;
+        1. Go to https://nhentai.net/. Clear the Cloudflare prompt.&#xD;
+        2 Open the developer console with F12.&#xD;
+        3. Go to the tab "Storage". On the left side expand "Cookies". Click on "https://nhentai.net".&#xD;
+        4. Copy the cookie values into `./config/.env`.&#xD;
+        5. Go to https://www.whatismybrowser.com/detect/what-is-my-user-agent/ and copy your user agent into `./config/.env`.&#xD;
+    - Google Chrome&#xD;
+        1. Go to https://nhentai.net/. Clear the cloudflare prompt.&#xD;
+        2. Open the developer console with F12.&#xD;
+        3. Go to the tab "Application". On the left side under "Storage", expand "Cookies". Click on "https://nhentai.net".&#xD;
+        4. Copy the cookie values into `./config/.env`.&#xD;
+        5. Go to https://www.whatismybrowser.com/detect/what-is-my-user-agent/ and copy your user agent into `./config/.env`.&#xD;
+&#xD;
+&amp;gt; &#xD;
+&amp;gt; If nHentai has "under attack" mode enabled, clearing the Cloudflare prompt and updating `CF_CLEARANCE` seem to be required daily.&#xD;
+&#xD;
+</Overview>
+  <Category>Downloaders: MediaApp:Books</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/soultaco83/unraid-templates/refs/heads/master/nhentai_archivist/nhentai_archivist.xml</TemplateURL>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1732511495</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="hentai" Target="/app/hentai" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Database" Target="/app/db/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/nhentai_archivist/db</Config>
+  <Config Name="Log" Target="/app/log/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/nhentai_archivist/log/</Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="UMASK" Target="UMASK" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">000</Config>
+  <Config Name="Appdata" Target="/app/config/" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/nhentai_archivist/config</Config>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">UTC</Config>```
+
+Once icon is created I can post submit it. Of course if there are any changes or additions feel free to let me know of anything. 
