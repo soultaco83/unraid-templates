@@ -47,13 +47,11 @@ Advanced options for .env: https://github.com/9-FS/nhentai_archivist/blob/main/r
   <DonateText/>
   <DonateLink/>
   <Requires/>
-  <Config Name="hentai" Target="/app/hentai" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Hentai" Target="/app/hentai" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Database" Target="/app/db/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/nhentai_archivist/db</Config>
   <Config Name="Log" Target="/app/log/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/nhentai_archivist/log/</Config>
+  <Config Name="Appdata" Target="/app/config/" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/nhentai_archivist/config</Config>
   <Config Name="PUID" Target="PUID" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
-  <Config Name="UMASK" Target="UMASK" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">000</Config>
-  <Config Name="Appdata" Target="/app/config/" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/nhentai_archivist/config</Config>
-  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">UTC</Config>```
-
-Once icon is created I can post submit it. Of course if there are any changes or additions feel free to let me know of anything. 
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">UTC</Config>
+  <Config Name="UMASK" Target="UMASK" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">000</Config>```
