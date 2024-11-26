@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <Container version="2">
   <Name>nhentai_archivist</Name>
   <Repository>ghcr.io/9-fs/nhentai_archivist:latest</Repository>
@@ -9,49 +10,51 @@
   <Support>https://github.com/9-FS/nhentai_archivist/issues</Support>
   <Project>https://github.com/9-FS/nhentai_archivist</Project>
   <Overview>Unraid template for 9-FS/nhentai_archivist&#xD;
-Advanced options for .env: https://github.com/9-FS/nhentai_archivist/blob/main/readme.md#further-settings&#xD;
 # nhentai_archivist&#xD;
-&amp;gt; [!WARNING]&#xD;
-&amp;gt; I advise against running multiple instances of nHentai Archivist at the same time.&#xD;
-## Installation&#xD;
-&#xD;
-1. Execute the program once to create a default `./config/.env`.&#xD;
-    This means that in the directory of the executable, there should now be a directory called "config" containing a file called ".env". You might need to enable seeing hidden files in the file explorer.&#xD;
-&#xD;
-2. I recommend setting the `CSRFTOKEN` cookie and `USER_AGENT`. If you start having problems with nHentai's bot protection (error 403), setting these is mandatory. If a `CF_CLEARANCE` cookie is available, it should be set as well.&#xD;
-    - Mozilla Firefox&#xD;
-        1. Go to https://nhentai.net/. Clear the Cloudflare prompt.&#xD;
-        2 Open the developer console with F12.&#xD;
-        3. Go to the tab "Storage". On the left side expand "Cookies". Click on "https://nhentai.net".&#xD;
-        4. Copy the cookie values into `./config/.env`.&#xD;
-        5. Go to https://www.whatismybrowser.com/detect/what-is-my-user-agent/ and copy your user agent into `./config/.env`.&#xD;
-    - Google Chrome&#xD;
-        1. Go to https://nhentai.net/. Clear the cloudflare prompt.&#xD;
-        2. Open the developer console with F12.&#xD;
-        3. Go to the tab "Application". On the left side under "Storage", expand "Cookies". Click on "https://nhentai.net".&#xD;
-        4. Copy the cookie values into `./config/.env`.&#xD;
-        5. Go to https://www.whatismybrowser.com/detect/what-is-my-user-agent/ and copy your user agent into `./config/.env`.&#xD;
 &#xD;
 &amp;gt; &#xD;
-&amp;gt; If nHentai has "under attack" mode enabled, clearing the Cloudflare prompt and updating `CF_CLEARANCE` seem to be required daily.&#xD;
+&amp;gt; If you have any questions, please **consult the readme first**.&#xD;
+&amp;gt;&#xD;
+&amp;gt; I spend a lot of effort to keep the readme up-to-date and chances are high that your problem has already been addressed here. If you still require assistance after reading the readme, post it publicly, preferably as a GitHub issue, so others can benefit from the troubleshooting as well.&#xD;
 &#xD;
-</Overview>
+## Introduction&#xD;
+&#xD;
+nHentai Archivist is a tool to download hentai from https://nhentai.net and convert them to CBZ files. From quickly downloading a few hentai specified in the console, downloading a few hundred hentai specified in a downloadme.txt, up to automatically keeping a massive self-hosted library up-to-date by automatically generating a downloadme.txt from a search by tag. (For that use-case it has been optimised to tag the CBZ files in a way that (https://komga.org/) in (https://komga.org/docs/guides/oneshots) interprets everything correctly.)&#xD;
+&#xD;
+Why CBZ? CBZ is a widespread standard and basically just a ZIP file containing the images and a metadata file. This enables nHentai Archivist to **keep the tags** which wouldn't be possible with PDF as far as I know.&#xD;
+&#xD;
+Big thanks go out to (https://github.com/sam-k0), who helped me with using nHentai's completely undocumented API. Without him this project could not have been reactivated.&#xD;
+I'm happy about anyone who finds my software useful and feedback is also always welcome. Happy downloading~&#xD;
+## Readme&#xD;
+https://github.com/9-FS/nhentai_archivist/blob/main/readme.md</Overview>
   <Category>Downloaders: MediaApp:Books</Category>
   <WebUI/>
-  <TemplateURL>https://raw.githubusercontent.com/soultaco83/unraid-templates/refs/heads/master/nhentai_archivist/nhentai_archivist.xml</TemplateURL>
+  <TemplateURL/>
   <Icon/>
-  <ExtraParams/>
+  <ExtraParams>--memory=1G</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1732511495</DateInstalled>
+  <DateInstalled>1732589223</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
-  <Config Name="Hentai" Target="/app/hentai" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Download Path" Target="/app/hentai" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Database" Target="/app/db/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/nhentai_archivist/db</Config>
   <Config Name="Log" Target="/app/log/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/nhentai_archivist/log/</Config>
+  <Config Name="CSRFTOKEN " Target="CSRFTOKEN " Default="" Mode="" Description="See step 2 of install guide on how to obtain: &#13;&#10;https://github.com/9-FS/nhentai_archivist?tab=readme-ov-file#installation" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="CLEANUP_TEMPORARY_FILES" Target="CLEANUP_TEMPORARY_FILES" Default="true" Mode="" Description="Setting this to false prevents the temporary directory containing the original images from being deleted after the CBZ file has been created. In addition to that it also saves a ComicBook.xml in the directory. This can be useful to improve compatibility with third party readers or deduplication software." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="DATABASE_URL" Target="DATABASE_URL" Default="/app/db/db.sqlite" Mode="" Description="This is the URL to the SQLite database file. If you changed DATABASE_URL, confirm the database directory already exists. It is possible that it is not created automatically because the URL could point to a remote directory. The database file will and should be created automatically." Type="Variable" Display="always" Required="false" Mask="false">/app/db/db.sqlite</Config>
+  <Config Name="DONTDOWNLOADME_FILEPATH" Target="DONTDOWNLOADME_FILEPATH" Default="defaults to None" Mode="" Description="This is the path to the file containing the nHentai ID you explicitly do not want to download, separated by line breaks. It has priority over all input methods. If you want to systematically exclude hentai by tag, use the - operator in the tag search instead." Type="Variable" Display="always" Required="false" Mask="false">/app/config/dontdownloadme.txt</Config>
+  <Config Name="DOWNLOADME_FILEPATH" Target="DOWNLOADME_FILEPATH" Default="/app/config/downloadme.txt" Mode="" Description="This is the path to the file containing the nHentai ID you want to download, separated by line breaks. If this file exists, it has priority over tag search and console input." Type="Variable" Display="always" Required="false" Mask="false">/app/config/downloadme.txt</Config>
+  <Config Name="FILENAME_TITLE_TYPE" Target="FILENAME_TITLE_TYPE" Default="English" Mode="" Description="Determines which title type to use when naming downloaded hentai files. Available settings:&#13;&#10;-English&#13;&#10;-Japanese&#13;&#10;-Pretty&#13;&#10;,If a Japanese or pretty title is not available, the English title will be used instead.&#13;&#10;If FILENAME_TITLE_TYPE is changed after hentai files have already been downloaded, existing files will not be renamed. They also will not be detected as already downloaded any more which can lead to duplicates. I therefore recommend to only change this setting before starting a fresh library." Type="Variable" Display="always" Required="false" Mask="false">English</Config>
+  <Config Name="LIBRARY_PATH" Target="LIBRARY_PATH" Default="/app/hentai/" Mode="" Description="This is the directory temporary images and finished CBZ files are download to. By default, it will download to ./hentai/." Type="Variable" Display="always" Required="false" Mask="false">/app/hentai/</Config>
+  <Config Name="LIBRARY_SPLIT" Target="LIBRARY_SPLIT" Default="0" Mode="" Description="Setting this to a value other than 0 splits the library at LIBRARY_PATH into sub-directories with a maximum number of LIBRARY_SPLIT hentai allowed per sub-directory. It is recommended if the number of hentai in 1 directory starts to affect file explorer performance. This should not affect you if you plan to keep less than 10.000 files in your LIBRARY_PATH directory, otherwise the recommended setting is LIBRARY_SPLIT = 10000." Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+  <Config Name="NHENTAI_TAGS" Target="NHENTAI_TAGS" Default="" Mode="" Description="Setting this will trigger " Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="USER_AGENT" Target="USER_AGENT" Default="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36</Config>
+  <Config Name="SLEEP_INTERVAL" Target="SLEEP_INTERVAL" Default="50000" Mode="" Description="Wait a bit between searches. I recommend a value of at least 50.000." Type="Variable" Display="always" Required="false" Mask="false">50000</Config>
   <Config Name="Appdata" Target="/app/config/" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/nhentai_archivist/config</Config>
-  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
-  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
   <Config Name="TZ" Target="TZ" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">UTC</Config>
-  <Config Name="UMASK" Target="UMASK" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">000</Config>```
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="UMASK" Target="UMASK" Default="000" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">000</Config>
+</Container>
