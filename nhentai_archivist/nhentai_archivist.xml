@@ -26,7 +26,7 @@ Why CBZ? CBZ is a widespread standard and basically just a ZIP file containing t
 Big thanks go out to (https://github.com/sam-k0), who helped me with using nHentai's completely undocumented API. Without him this project could not have been reactivated.&#xD;
 I'm happy about anyone who finds my software useful and feedback is also always welcome. Happy downloading~&#xD;
 ## Readme&#xD;
-https://github.com/9-FS/nhentai_archivist/blob/main/readme.md</Overview>
+(https://github.com/9-FS/nhentai_archivist/blob/main/readme.md)</Overview>
   <Category>Downloaders: MediaApp:Books</Category>
   <WebUI/>
   <TemplateURL/>
@@ -34,11 +34,11 @@ https://github.com/9-FS/nhentai_archivist/blob/main/readme.md</Overview>
   <ExtraParams>--memory=1G</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1732592610</DateInstalled>
+  <DateInstalled>1732848056</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
-  <Config Name="Download Path" Target="/app/hentai" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Download Path" Target="/app/hentai" Default="" Mode="rw" Description="Ensure container path and Variable Library_path are the same" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Database" Target="/app/db/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/nhentai_archivist/db</Config>
   <Config Name="Log" Target="/app/log/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/nhentai_archivist/log/</Config>
   <Config Name="CSRFTOKEN " Target="CSRFTOKEN " Default="" Mode="" Description="See step 2 of install guide on how to obtain: &#13;&#10;https://github.com/9-FS/nhentai_archivist?tab=readme-ov-file#installation" Type="Variable" Display="always" Required="true" Mask="true"/>
@@ -49,7 +49,7 @@ https://github.com/9-FS/nhentai_archivist/blob/main/readme.md</Overview>
   <Config Name="FILENAME_TITLE_TYPE" Target="FILENAME_TITLE_TYPE" Default="English" Mode="" Description="Determines which title type to use when naming downloaded hentai files. Available settings:&#13;&#10;-English&#13;&#10;-Japanese&#13;&#10;-Pretty&#13;&#10;,If a Japanese or pretty title is not available, the English title will be used instead.&#13;&#10;If FILENAME_TITLE_TYPE is changed after hentai files have already been downloaded, existing files will not be renamed. They also will not be detected as already downloaded any more which can lead to duplicates. I therefore recommend to only change this setting before starting a fresh library." Type="Variable" Display="always" Required="false" Mask="false">English</Config>
   <Config Name="LIBRARY_PATH" Target="LIBRARY_PATH" Default="/app/hentai/" Mode="" Description="This is the directory temporary images and finished CBZ files are download to. By default, it will download to ./hentai/." Type="Variable" Display="always" Required="false" Mask="false">/app/hentai/</Config>
   <Config Name="LIBRARY_SPLIT" Target="LIBRARY_SPLIT" Default="0" Mode="" Description="Setting this to a value other than 0 splits the library at LIBRARY_PATH into sub-directories with a maximum number of LIBRARY_SPLIT hentai allowed per sub-directory. It is recommended if the number of hentai in 1 directory starts to affect file explorer performance. This should not affect you if you plan to keep less than 10.000 files in your LIBRARY_PATH directory, otherwise the recommended setting is LIBRARY_SPLIT = 10000." Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-  <Config Name="NHENTAI_TAGS" Target="NHENTAI_TAGS" Default="" Mode="" Description="Setting this will trigger &quot;server mode&quot;. If no file at DOWNLOADME_FILEPATH is found, it will generate one by searching for the tags specified. After all hentai on the downloadme have been downloaded, it will wait for SLEEP_INTERVAL seconds and restart the search. This is useful to keep a self-hosted library up-to-date with the latest releases from the specified tag search. Multiple tags and tag exclusions can be specified and are connected via logical AND. This means results must fullfill all criteria specified. Example: NHENTAI_TAGS: [tag:&quot;ffm threesome&quot;, tag:&quot;sister&quot;, -tag:&quot;full censorship&quot;, -tag:&quot;mind control&quot;] # all hentai with the tags &quot;ffm threesome&quot; and &quot;sister&quot; but without the tags &quot;full censorship&quot; and &quot;mind control&quot;" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="NHENTAI_TAGS" Target="NHENTAI_TAGS" Default="" Mode="" Description="See (https://github.com/9-FS/nhentai_archivist/blob/main/readme.md#further-settings) _________ &#13;&#10;NHENTAI_TAGS --&amp;gt;docker-compose.yaml examples. Do not include '  when setting tag" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="USER_AGENT" Target="USER_AGENT" Default="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36</Config>
   <Config Name="SLEEP_INTERVAL" Target="SLEEP_INTERVAL" Default="50000" Mode="" Description="Wait a bit between searches. I recommend a value of at least 50.000." Type="Variable" Display="always" Required="false" Mask="false">50000</Config>
   <Config Name="Appdata" Target="/app/config/" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/nhentai_archivist/config</Config>
