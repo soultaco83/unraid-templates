@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>jellyfin_with_request</Name>
+  <Name>jellyfin_with_request-1</Name>
   <Repository>soultaco83/jellyfin_with_request</Repository>
   <Registry>https://registry.hub.docker.com/repository/docker/soultaco83/jellyfin_with_request</Registry>
   <Network>bridge</Network>
@@ -21,15 +21,14 @@ Jellyfin(https://github.com/jellyfin/jellyfin) is a Free Software Media System t
 &#xD;
 &#xD;
 This uses the offical Jellyfin container. This official container should help more people with hardware transcoding since this is a Debian base image instead of ubuntu</Overview>
-  <Beta>False</Beta>
   <Category>MediaApp:Video MediaServer:Video</Category>
-  <Date>2024-10-20</Date>
   <WebUI>http://[IP]:[PORT:8096]</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/soultaco83/unraid-templates/refs/heads/master/jellyfin_with_request/jellyfin_with_request.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/soultaco83/unraid-templates/master/jellyfin_with_request/jellyfin_with_request.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/soultaco83/jellyfin-packaging/refs/heads/master/jellyfin_with_request-icon.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
+  <DateInstalled>1745493603</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
@@ -39,10 +38,11 @@ This uses the offical Jellyfin container. This official container should help mo
   <Config Name="DNLA" Target="1900" Default="1900" Mode="udp" Description="Optional - Service discovery used by DNLA and clients." Type="Port" Display="always" Required="false" Mask="false">1900</Config>
   <Config Name="TV Shows" Target="/data/tvshows" Default="" Mode="rw" Description="Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc." Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Movies" Target="/data/movies" Default="" Mode="rw" Description="Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc." Type="Path" Display="always" Required="true" Mask="false"/>
-  <Config Name="JELLYFIN_PublishedServerUrl" Target="JELLYFIN_PublishedServerUrl" Default="IP OF SERVER" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="JELLYFIN_PublishedServerUrl" Target="JELLYFIN_PublishedServerUrl" Default="IP OF SERVER" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">IP OF SERVER</Config>
   <Config Name="xmltv" Target="/xmltv" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="Transcode" Target="/tmp/jellyfin" Default="" Mode="rw" Description="Do not remove. Default transcode directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/jellyfin_with_request/Transcode</Config>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
   <Config Name="UMASK" Target="UMASK" Default="022" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">022</Config>
-  <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/Jellyfin" Mode="rw" Description="Jellyfin data storage location. *This can grow very large, 50gb+ is likely for a large collection.*" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/Jellyfin</Config>
+  <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/jellyfin_with_request-1" Mode="rw" Description="Jellyfin data storage location. *This can grow very large, 50gb+ is likely for a large collection.*" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/jellyfin_with_request</Config>
 </Container>
