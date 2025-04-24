@@ -26,7 +26,7 @@ This uses the offical Jellyfin container. This official container should help mo
   <Date>2024-10-20</Date>
   <WebUI>http://[IP]:[PORT:8096]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/soultaco83/unraid-templates/refs/heads/master/jellyfin_with_request/jellyfin_with_request.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/soultaco83/jellyfin-web-requeststab/refs/heads/master/src/favicon.png</Icon>
+  <Icon>https://raw.githubusercontent.com/soultaco83/jellyfin-packaging/refs/heads/master/jellyfin_with_request-icon.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
