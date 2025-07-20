@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>jellyfin_with_request-1</Name>
+  <Name>jellyfin_with_request</Name>
   <Repository>soultaco83/jellyfin_with_request</Repository>
   <Registry>https://registry.hub.docker.com/repository/docker/soultaco83/jellyfin_with_request</Registry>
   <Network>bridge</Network>
@@ -44,5 +44,5 @@ This uses the offical Jellyfin container. This official container should help mo
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
   <Config Name="UMASK" Target="UMASK" Default="022" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">022</Config>
-  <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/jellyfin_with_request-1" Mode="rw" Description="Jellyfin data storage location. *This can grow very large, 50gb+ is likely for a large collection.*" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/jellyfin_with_request</Config>
+  <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/jellyfin_with_request" Mode="rw" Description="Jellyfin data storage location. *This can grow very large, 50gb+ is likely for a large collection.*" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/jellyfin_with_request</Config>
 </Container>
