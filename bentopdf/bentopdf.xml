@@ -16,7 +16,7 @@ https://hub.docker.com/r/bentopdf/bentopdf/</Overview>
   <Category>Tools:</Category>
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
   <TemplateURL/>
-  <Icon>https://raw.githubusercontent.com/alam00000/bentopdf/refs/heads/main/public/images/favicon.svg</Icon>
+  <Icon>https://raw.githubusercontent.com/alam00000/bentopdf/refs/heads/main/public/images/favicon.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
