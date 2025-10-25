@@ -1,26 +1,41 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>jellyfin_with_request</Name>
-  <Repository>soultaco83/jellyfin_with_request</Repository>
+  <Repository>soultaco83/jellyfin_with_request:dev</Repository>
   <Registry>https://registry.hub.docker.com/repository/docker/soultaco83/jellyfin_with_request</Registry>
-  <Network>bridge</Network>
-  <MyIP/>
+  <Network>br0.2</Network>
+  <MyIP>10.10.10.20</MyIP>
   <Shell>bash</Shell>
-  <Privileged>false</Privileged>
+  <Privileged>true</Privileged>
   <Support>https://github.com/soultaco83/jellyfin-web-requeststab</Support>
   <Project>https://github.com/jellyfin/jellyfin</Project>
-  <Overview>Jellyfin server and webui built off the latest commits. It includes a new tab called Requests&#xD;
-Because of the nature of Jellyfin unstable, (Docker is set to backup database and configs after the docker has been updated to /config/backups)&#xD;
-Be sure to backup the jellyfin database before updating, so you have something to rollback to&#xD;
-RequestsAddon included&#xD;
-https://github.com/soultaco83/Jellyfin_requests_plugin&#xD;
-&#xD;
-Easily allows you to add your request site to the homepage of jellyfin for your users&#xD;
-&#xD;
-Jellyfin(https://github.com/jellyfin/jellyfin) is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps. Jellyfin is descended from Emby's 3.5.2 release and ported to the .NET Core framework to enable full cross-platform support. There are no strings attached, no premium licenses or features, and no hidden agendas: just a team who want to build something better and work together to achieve it.&#xD;
-&#xD;
-&#xD;
-This uses the offical Jellyfin container. This official container should help more people with hardware transcoding since this is a Debian base image instead of ubuntu</Overview>
+  <Overview>Jellyfin server and webui built off the latest commits. It includes several plugins by default and personal changes&#13;
+&#13;
+This image comes with the following plugins pre-installed:&#13;
+&#13;
+1. **Custom Tabs** by IAmParadox27 - Add custom tabs to your Jellyfin interface&#13;
+   - Repository: https://github.com/IAmParadox27/jellyfin-plugin-custom-tabs&#13;
+   - License: GPL-3.0&#13;
+&#13;
+2. **File Transformation** by IAmParadox27 - Transform and manage files&#13;
+   - Repository: https://github.com/IAmParadox27/jellyfin-plugin-file-transformation&#13;
+   - License: GPL-3.0&#13;
+&#13;
+3. **Jellyfin Enhanced** by n00bcodr - Enhanced Jellyfin features&#13;
+   - Repository: https://github.com/n00bcodr/jellyfin-enhanced&#13;
+&#13;
+## Automatic Backups&#13;
+&#13;
+This image automatically creates backups of your database and configuration on:&#13;
+- First container start&#13;
+- Docker image updates&#13;
+&#13;
+Backups are stored in `/config/backups/` and the last 10 backups are retained.&#13;
+&#13;
+## License&#13;
+&#13;
+This Docker image includes plugins licensed under GPL-3.0. See individual plugin repositories for detailed license information.&#13;
+</Overview>
   <Category>MediaApp:Video MediaServer:Video</Category>
   <WebUI>http://[IP]:[PORT:8096]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/soultaco83/unraid-templates/master/jellyfin_with_request/jellyfin_with_request.xml</TemplateURL>
@@ -39,7 +54,6 @@ This uses the offical Jellyfin container. This official container should help mo
   <Config Name="TV Shows" Target="/data/tvshows" Default="" Mode="rw" Description="Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc." Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Movies" Target="/data/movies" Default="" Mode="rw" Description="Media goes here. Add as many as needed e.g. `/data/movies`, `/data/tv`, etc." Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="JELLYFIN_PublishedServerUrl" Target="JELLYFIN_PublishedServerUrl" Default="IP OF SERVER" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">IP OF SERVER</Config>
-  <Config Name="xmltv" Target="/xmltv" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false"/>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
   <Config Name="UMASK" Target="UMASK" Default="022" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">022</Config>
