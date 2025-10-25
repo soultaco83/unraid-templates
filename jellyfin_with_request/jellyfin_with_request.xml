@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>jellyfin_with_request</Name>
-  <Repository>soultaco83/jellyfin_with_request:dev</Repository>
+  <Repository>soultaco83/jellyfin_with_request</Repository>
   <Registry>https://registry.hub.docker.com/repository/docker/soultaco83/jellyfin_with_request</Registry>
-  <Network>br0.2</Network>
-  <MyIP>10.10.10.20</MyIP>
+  <Network>bridge</Network>
+  <MyIP/>
   <Shell>bash</Shell>
-  <Privileged>true</Privileged>
+  <Privileged>false</Privileged>
   <Support>https://github.com/soultaco83/jellyfin-web-requeststab</Support>
   <Project>https://github.com/jellyfin/jellyfin</Project>
   <Overview>Jellyfin server and webui built off the latest commits. It includes several plugins by default and personal changes&#13;
