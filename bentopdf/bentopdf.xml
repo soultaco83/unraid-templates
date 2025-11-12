@@ -14,7 +14,8 @@ BentoPDF is a privacy first PDF Toolkit&#13;
 &#13;
 https://hub.docker.com/r/bentopdf/bentopdf/</Overview>
   <Category>Tools:</Category>
-  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <ReadMeFirst>https://github.com/alam00000/bentopdf/issues/147</ReadMeFirst>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/alam00000/bentopdf/refs/heads/main/public/images/favicon.png</Icon>
   <ExtraParams/>
@@ -24,7 +25,7 @@ https://hub.docker.com/r/bentopdf/bentopdf/</Overview>
   <DonateText/>
   <DonateLink/>
   <Requires/>
-  <Config Name="Container Port 1" Target="80" Default="3000" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">80</Config>
+  <Config Name="Container Port 1" Target="8080" Default="3000" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">80</Config>
   <TailscaleStateDir/>
 </Container>
 
