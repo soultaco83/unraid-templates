@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>bentopdf</Name>
-  <Repository>bentopdfteam/bentopdf</Repository>
+  <Repository>ghcr.io/alam00000/bentopdf:latest</Repository>
   <Registry>https://hub.docker.com/r/bentopdf/bentopdf/</Registry>
   <Network>bridge</Network>
   <MyIP/>
