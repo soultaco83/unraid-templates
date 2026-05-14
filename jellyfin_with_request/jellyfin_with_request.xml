@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/soultaco83/jellyfin-web-requeststab</Support>
   <Project>https://github.com/jellyfin/jellyfin</Project>
-  <Overview>Jellyfin server and webui built off the latest commits. It includes several plugins by default and personal changes&#13;
+  <Overview>Jellyfin server and webui built off master branch. It includes several plugins by default and personal changes&#13;
 &#13;
 This image comes with the following plugins pre-installed:&#13;
 &#13;
@@ -20,9 +20,6 @@ This image comes with the following plugins pre-installed:&#13;
 2. **File Transformation** by IAmParadox27 - Transform and manage files&#13;
    - Repository: https://github.com/IAmParadox27/jellyfin-plugin-file-transformation&#13;
    - License: GPL-3.0&#13;
-&#13;
-3. **Jellyfin Enhanced** by n00bcodr - Enhanced Jellyfin features&#13;
-   - Repository: https://github.com/n00bcodr/jellyfin-enhanced&#13;
 &#13;
 ## Automatic Backups&#13;
 &#13;
